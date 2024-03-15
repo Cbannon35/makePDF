@@ -5,9 +5,9 @@ operation_map = {"img": merge_images_to_pdf, "pdf": merge_pdfs_in_directory}
 help_map = {"img": "merge images in the input directory into a single PDF file", 
             "pdf": "merge PDFs in the input directory into a single PDF file", 
             "help": "prints this message or prints further information about a certain flag or command", 
-            "-in": "specifies the absolute path to the input directory (where the images or PDFs are located)", 
+            "-i": "specifies the absolute path to the input directory (where the images or PDFs are located)", 
             "--input": "specifies the absolute path to the input directory (where the images or PDFs are located)",
-            "-out": "specifies the absolute path to the output directory (where the pdf will be generated)", 
+            "-o": "specifies the absolute path to the output directory (where the pdf will be generated)", 
             "--output": "specifies the absolute path to the output directory (where the pdf will be generated)",
             "-name": "the name of the output file",
             }
@@ -60,10 +60,10 @@ help <command or flag>
 Arguments:
 ----------
 
--in, --input <input_directory>
+-i, --input <input_directory>
     Specify the input directory containing files to be processed. Default is the current directory.
 
--out, --output <output_directory>
+-o, --output <output_directory>
     Specify the output directory where the merged PDF file will be saved. Default is the current directory.
 
 -name, <output_filename>

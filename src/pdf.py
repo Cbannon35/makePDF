@@ -11,13 +11,13 @@ def create_valid_filepath(outdir, filepath):
     if not os.path.exists(os.path.join(outdir, filepath)):
         return filepath
     
-    print(f"Error: File {output_filename} already exists in {outdir}")
+    print(f"Error: File {filepath} already exists in {outdir}")
     i = 1
-    while os.path.exists(os.path.join(outdir, f"{output_filename[:-4]}_{i}.pdf")):
+    while os.path.exists(os.path.join(outdir, f"{filepath[:-4]}_{i}.pdf")):
         i += 1
-    output_filename = f"{output_filename[:-4]}_{i}.pdf"
-    print(f"Using {output_filename} instead")
-    return output_filename
+    filepath = f"{filepath[:-4]}_{i}.pdf"
+    print(f"Using {filepath} instead")
+    return filepath
 
 def write_pdf_to_file(pdf, filepath):
     with open(filepath, 'wb') as output_file:
@@ -62,7 +62,7 @@ def merge_images_to_pdf(indir='./', outdir='./', output_filename='merged_images.
     
     os.chdir(indir)
 
-    images = [os.path.join(indir, filename) for filename in os.listdir('.') if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.heic'))]
+    images = [os.path.join(indir, filename) for filename in os.listdir('.') if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.heic', '.tiff'))]
 
     valid_images = []
     invalid_images = []
