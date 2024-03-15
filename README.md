@@ -1,11 +1,14 @@
-# makePDF
+# makePDF or img-to-pdf
+
+[![PyPI version](https://badge.fury.io/py/img-to-pdf.svg)](https://badge.fury.io/py/img-to-pdf)
+
 
 This is a simple script to convert a markdown file to convert all images or pdfs in a directory to a single pdf file.
 
 ## Usage
 
 ```bash
-python main.py [operation] [flags]
+makePDF [operation] [flags]
 ```
 
 ## Operations
@@ -25,19 +28,19 @@ python main.py [operation] [flags]
 Merge images from the directory `input_images` into a single PDF named `output.pdf` in the directory `example/output_pdf`:
 
 ```bash
-python main.py img -in input_images -out example/output_pdf -name output.pdf
+makePDF img -in input_images -out example/output_pdf -name output.pdf
 ```
 
-Or just merge all images in the current directory into a single PDF in the current directory:
+Merge all pdf in the current directory into a single PDF in the current directory:
 
 ```bash
-python main.py img
+makePDF.py pdf
 ```
 
 ## Installation
 
 ```bash
-pip install makePDF
+pip install img-to-pdf
 ```
 
 ## License
