@@ -13,7 +13,7 @@ import os
 
 setup(
     name='img-to-pdf',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
@@ -38,6 +38,5 @@ setup(
     ],
     license='MIT',
     username="__token__",
-    password="pypi-AgENdGVzdC5weXBpLm9yZwIkOGFkMTY3NzMtNGVhMC00ODk4LWFkOWMtMzgwM2QyYjBmYmViAAIqWzMsIjkyODNiYmUxLTM2NzUtNGRhZi04M2FlLTRmYzYzOGY4ZGJhYSJdAAAGIKDTnKxIqziEp-U7GccwjSOmGJ70Gfmv8C7PaOce2FJa",
     keywords='PDF, image, convert',
 )
