@@ -22,5 +22,6 @@ setup(
     description='Simple CLI tool to convert images in a directory to a PDF',
     url='https://github.com/Cbannon35/makePDF',
     install_requires=requirements,
-    
+    readme='README.md',
+    license='MIT',
 )
