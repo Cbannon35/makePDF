@@ -19,6 +19,10 @@ def create_valid_filepath(outdir, filepath):
     print(f"Using {output_filename} instead")
     return output_filename
 
+def write_pdf_to_file(pdf, filepath):
+    with open(filepath, 'wb') as output_file:
+        pdf.write(output_file)
+
 
 def merge_pdfs_in_directory(indir='./', outdir='./', output_filename='merged.pdf'):
     indir = os.path.abspath(indir)
@@ -33,7 +37,6 @@ def merge_pdfs_in_directory(indir='./', outdir='./', output_filename='merged.pdf
     for filename in os.listdir('.'):
         if filename.endswith('.pdf'):
             filepath = os.path.join(indir, filename)
-            # Check if the file is empty before appending
             if os.path.getsize(filepath) > 0:
                 merger.append(filepath)
 
@@ -49,6 +52,7 @@ def merge_pdfs_in_directory(indir='./', outdir='./', output_filename='merged.pdf
         merger.write(output_file)
 
     print(f"All non-empty PDFs in {indir} have been merged into {output_filepath}.")
+    print(f"PDFs combined: {len(merger.pages)}")
 
 def merge_images_to_pdf(indir='./', outdir='./', output_filename='merged_images.pdf'):
     indir = os.path.abspath(indir)
@@ -58,12 +62,6 @@ def merge_images_to_pdf(indir='./', outdir='./', output_filename='merged_images.
     
     os.chdir(indir)
 
-    # images = []
-    # for filename in os.listdir('.'):
-    #     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.heic')):
-    #         filepath = os.path.join(indir, filename)
-    #         images.append(filepath)
-    #         continue
     images = [os.path.join(indir, filename) for filename in os.listdir('.') if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.heic'))]
 
     valid_images = []
@@ -86,7 +84,7 @@ def merge_images_to_pdf(indir='./', outdir='./', output_filename='merged_images.
         print(f"No valid images found in {indir}. Aborting operation.")
         return
 
-    print(f"Converted {len(valid_images)} images to PDF...")
+    print(f"Converting {len(valid_images)} images to PDF...")
     pdf_bytes = img2pdf.convert(valid_images)
 
     output_filepath = os.path.join(outdir, output_filename)
