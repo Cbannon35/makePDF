@@ -3,7 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/img-to-pdf.svg)](https://badge.fury.io/py/img-to-pdf)
 
 
-This is a simple script to convert a markdown file to convert all images or pdfs in a directory to a single pdf file.
+This is a simple script to convert all images or pdfs in a directory to a single pdf file.
 
 - [PyPI](https://pypi.org/project/img-to-pdf/)
 - [GitHub](https://github.com/Cbannon35/makePDF/)
